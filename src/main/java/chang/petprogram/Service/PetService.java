@@ -17,4 +17,8 @@ JdbcTemplate jdbcTemplate;
             List<PetModel> PetAll= jdbcTemplate.query("select * from petprogram",pmapper);
             return PetAll;
         }
+    public List<PetModel> getPetModelByAge(int ano) {
+        PetMapper pmapper= new PetMapper();
+        return jdbcTemplate.query("select * from petprogram where Age=" + ano,pmapper);
+    }
 }

@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
     <meta charset="UTF-8">
+    <style>
+        #pets {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #pets td, #pets th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #pets tr:nth-child(even){background-color: #f2f2f2;}
+
+        #pets tr:hover {background-color: #ddd;}
+
+        #pets th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
     <title>Title</title>
 </head>
 <body>
+<form method="post" action="/pet">
+    訂單編號: <input type="text" name="ano" value="" ></input>
+    <input type="submit"></input>
+</form>
 
 <h1>訂單總覽</h1>
 
 <table id="pets">
     <tr>
-        <th>name</th>
+        <th>狗名</th>
         <th>性別</th>
-        <th>Ligation</th>
+        <th>結紮</th>
         <th>毛的長度</th>
         <th>毛色</th>
         <th>年齡</th>
@@ -20,16 +49,23 @@
         <th>種類</th>
     </tr>
     <tr th:each="pet : ${pets}">
-        <td th:text="${pet.getPetName()}"></td>
-        <td th:text="${pet.getGender()}">Maria Anders</td>
-        <td th:text="${pet.getLigation()}">Germany</td>
-        <td th:text="${pet.getHairLengh()}">Germany</td>
-        <td th:text="${pet.getHairColor()}">Germany</td>
-        <td th:text="${pet.getAge()}">Germany</td>
-        <td th:text="${pet.getVariety()}">Germany</td>
-        <td th:text="${ pet.getKind()}">Germany</td>
+        <td th:text="${pet.PetName}"></td>
+        <td th:text="${pet.Gender}">Maria Anders</td>
+        <td th:text="${pet.Ligation}">Germany</td>
+        <td th:text="${pet.HairLengh}">Germany</td>
+        <td th:text="${pet.HairColor}">Germany</td>
+        <td th:text="${pet.Age}">Germany</td>
+        <td th:text="${pet.Variety}">Germany</td>
+        <td th:text="${pet.Kind}">Germany</td>
     </tr>
 </table>
 
+<!--<script src="https://code.jquery.com/jquery-3.7.0.js"></script>-->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#pets').DataTable();
+    } );
+</script>
 </body>
 </html>
