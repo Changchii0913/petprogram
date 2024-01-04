@@ -21,9 +21,10 @@ public class PetController {
         model.addAttribute("pets",pets);
         return "pet_list";
     }
-    @PostMapping("/pet")
-    public  String chose(Model model, @RequestParam int ano){
-        model.addAttribute("PetModel",petService.getPetModelByAge(ano));
+    @GetMapping("/pet123")
+    public  String pet( @RequestParam double ano,Model model){
+
+        model.addAttribute("pets",petService.getPetModelByAge(ano));
 return "pet_list";
     }
 
