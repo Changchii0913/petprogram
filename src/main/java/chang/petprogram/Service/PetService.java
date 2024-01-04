@@ -21,6 +21,8 @@ JdbcTemplate jdbcTemplate;
         PetMapper pmapper= new PetMapper();
         String sql="select * from petprogram where age=?";
         System.out.println(sql+ano);
+        System.out.println(ano);
+
         return jdbcTemplate.query(sql,pmapper,ano);
     }
 }

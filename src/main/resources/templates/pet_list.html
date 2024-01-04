@@ -28,10 +28,20 @@
         }
     </style>
     <title>Title</title>
+    <script>
+        function validateInput() {
+            var inputValue = document.getElementById("test");
+            if (inputValue.value==='') {
+                alert("Please enter a valid number");
+                return false;
+            }
+            return  true;
+        }
+    </script>
 </head>
 <body>
-<form action="/pet123">
-    訂單編號: <input type="text" name="ano" value="" ></input>
+<form action="/pet123" onsubmit="return validateInput()">
+    訂單編號: <input type="text" name="ano" value="" id="test"></input>
     <input type="submit"></input>
 </form>
 <form action="/pet">
