@@ -41,7 +41,7 @@
 </head>
 <body>
 <form action="/pet123" onsubmit="return validateInput()">
-    訂單編號: <input type="text" name="ano" value="" id="test"></input>
+    訂單編號: <input type="text" name="word" value="" id="test"></input>
     <input type="submit"></input>
 </form>
 <form action="/pet">
@@ -61,6 +61,7 @@
         <th>年齡</th>
         <th>體重</th>
         <th>品種</th>
+        <th>種類</th>
         <th>N_Adopted</th>
         <th>Adpoted</th>
         <th>Chip</th>
@@ -75,6 +76,7 @@
         <td th:text="${pet.Age}">Germany</td>
         <td th:text="${pet.Weight}">Germany</td>
         <td th:text="${pet.Variety}">Germany</td>
+        <td th:text="${pet.Kind}">Germany</td>
         <td th:text="${pet.N_Adopted}">Germany</td>
         <td th:text="${pet.Adopted}">Germany</td>
         <td th:text="${pet.Chip}">Germany</td>

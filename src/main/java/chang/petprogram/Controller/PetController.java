@@ -24,9 +24,9 @@ public class PetController {
         return "pet_list";
     }
     @GetMapping("/pet123")
-    public  String pet( @RequestParam Double ano,Model model){
-        if(ano!=null){
-            model.addAttribute("pets", petService.getPetModelByAge(ano));
+    public  String pet( @RequestParam String word,Model model){
+        if(word!=null){
+            model.addAttribute("pets", petService.getPetModelByAge(word));
             return "pet_list";
 
             }else {
