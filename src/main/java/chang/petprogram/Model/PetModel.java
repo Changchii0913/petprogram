@@ -16,7 +16,12 @@ public class PetModel {
     private String HairLengh;
     private String HairColor;
     private Double Age;
+    private int Weight;
     private String Variety;
     private String Kind;
+    private String N_Adopted;
+    private String Adopted;
+    private String Chip;
+    private String AdName;
 
 }

@@ -59,8 +59,12 @@
         <th>毛的長度</th>
         <th>毛色</th>
         <th>年齡</th>
+        <th>體重</th>
         <th>品種</th>
-        <th>種類</th>
+        <th>N_Adopted</th>
+        <th>Adpoted</th>
+        <th>Chip</th>
+        <th>Ad-Name</th>
     </tr>
     <tr th:each="pet : ${pets}">
         <td th:text="${pet.PetName}"></td>
@@ -69,8 +73,12 @@
         <td th:text="${pet.HairLengh}">Germany</td>
         <td th:text="${pet.HairColor}">Germany</td>
         <td th:text="${pet.Age}">Germany</td>
+        <td th:text="${pet.Weight}">Germany</td>
         <td th:text="${pet.Variety}">Germany</td>
-        <td th:text="${pet.Kind}">Germany</td>
+        <td th:text="${pet.N_Adopted}">Germany</td>
+        <td th:text="${pet.Adopted}">Germany</td>
+        <td th:text="${pet.Chip}">Germany</td>
+        <td th:text="${pet.AdName}">Germany</td>
     </tr>
 </table>
 

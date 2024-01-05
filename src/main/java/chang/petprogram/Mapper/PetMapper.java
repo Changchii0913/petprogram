@@ -16,8 +16,13 @@ public class PetMapper implements RowMapper<PetModel> {
                 p.setHairLengh(rs.getString("HairLengh"));
                 p.setHairColor(rs.getString("HairColor"));
                 p.setAge(rs.getDouble("Age"));
+                p.setWeight(rs.getInt("Weight"));
                 p.setVariety(rs.getString("Variety"));
                 p.setKind(rs.getString("Kind"));
+                p.setN_Adopted(rs.getString("N_Adopted"));
+                p.setAdopted(rs.getString("Adopted"));
+                p.setChip(rs.getString("Chip"));
+                p.setAdName(rs.getString("Ad-Name"));
                 return p;
 
     }

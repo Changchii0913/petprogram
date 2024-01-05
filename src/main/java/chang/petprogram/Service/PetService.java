@@ -17,12 +17,14 @@ JdbcTemplate jdbcTemplate;
             List<PetModel> PetAll= jdbcTemplate.query("select * from petprogram",pmapper);
             return PetAll;
         }
-    public List<PetModel> getPetModelByAge(double ano) {
+    public List<PetModel> getPetModelByAge(Double ano) {
         PetMapper pmapper= new PetMapper();
         String sql="select * from petprogram where age=?";
         System.out.println(sql+ano);
         System.out.println(ano);
-
+        if(ano==null){
+            return jdbcTemplate.query("select * from petprogram",pmapper);
+        }
         return jdbcTemplate.query(sql,pmapper,ano);
     }
 }

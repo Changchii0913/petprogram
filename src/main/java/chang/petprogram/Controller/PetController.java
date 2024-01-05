@@ -18,15 +18,26 @@ public class PetController {
     @GetMapping("/pet")
     public String pet(Model model){
         List<PetModel> pets =petService.getPetALL();
-        
+
         model.addAttribute("pets",pets);
+
         return "pet_list";
     }
     @GetMapping("/pet123")
-    public  String pet( @RequestParam double ano,Model model){
-        System.out.println(ano);
-        model.addAttribute("pets",petService.getPetModelByAge(ano));
-return "pet_list";
+    public  String pet( @RequestParam Double ano,Model model){
+        if(ano!=null){
+            model.addAttribute("pets", petService.getPetModelByAge(ano));
+            return "pet_list";
+
+            }else {
+            List<PetModel> pets =petService.getPetALL();
+
+            model.addAttribute("pets",pets);
+            return "pet_list";
+
+//            model.addAttribute("pets", petService.getPetModelByAge(ano));
+//            return "pet_list";
+        }
     }
 
 }
